@@ -165,7 +165,7 @@ class Rss20 extends Parser
         $dc_date = XmlParser::getXPathResult($entry, 'dc:date', $this->namespaces);
 
         $date = null;
-        if(!empty($date)) {
+        if(!empty($pub_date)) {
             $date = $this->getDateParser()->getDateTime(XmlParser::getValue($pub_date));
         } else if (!empty($dc_date)) {
             $date = $this->getDateParser()->getDateTime(XmlParser::getValue($dc_date));
